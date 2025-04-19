@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block Title %}Album: {{albm}}{% endblock %}
+{% block content %}
+<h1>My Playlist</h1>
+<div style="display: flex; gap: 10px;">
+  <form action="/custom/add" style="display: inline;">
+    <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="+ Add">
+  </form>
+  <form action="/custom/remove" style="display: inline;">
+    <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="- Remove">
+  </form>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Album</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for song in songs %}
+        <tr>
+            <td>{{ song.trackID }}</td>
+            <td>{{ song.title }}</td>
+            <td>{{ song.artist }}</td>
+            <td>{{ song.album }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block Title %}Custom Playlist{% endblock %}
+{% block content %}
+
+<form action="/custom/add" method="POST" style="max-width: 400px; margin: 20px auto;">
+  <label for="trackid">Track ID:</label><br>
+  <input type="text" id="trackid" name="trackid" required><br><br>
+
+  <input type="submit" value="Submit Song">
+</form>
+
+{% endblock %}
